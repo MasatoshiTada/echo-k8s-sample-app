@@ -20,7 +20,7 @@ func main() {
 	}
 
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
+	e.GET("/**", func(c echo.Context) error {
 		return c.String(http.StatusOK, fmt.Sprintf("%s(%s)", appname, hostname))
 	})
 	e.Logger.Fatal(e.Start(":80"))
